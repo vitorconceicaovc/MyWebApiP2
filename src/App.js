@@ -1,9 +1,11 @@
 import { Link, Route, Routes } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { List } from "./pages/List";
+import { Home } from "./pages/Home";
+import { EmployeesList } from "./pages/EmployeesList";
 import { About } from "./pages/About";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -11,10 +13,12 @@ function App() {
     
     
     <NavBar />
+    <Footer />
 
     <Routes>
-      
-      <Route path="/" element={<List/>} />
+
+      <Route path="/" element={<Home/>} />
+      <Route path="/employeeslist" element={<EmployeesList/>} />
       <Route path="/about" element={<About/>} />
 
     </Routes>

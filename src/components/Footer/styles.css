@@ -1,0 +1,11 @@
+footer {
+    width: 100%;
+    position: absolute;
+    height: 50px;
+    bottom: 0;
+    background-color: rgba(32, 32, 32, 0.536);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+}
