@@ -22,6 +22,7 @@ const NavBar = () => {
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="https://github.com/vitorconceicaovc/MyWebApiP1" target="blank">Backend</NavDropdown.Item>
                         </NavDropdown>
+                        <Nav.Link href="http://mywebapi.somee.com/Help" target='_blank' >API</Nav.Link>   
                         <Nav.Link href="/about">About</Nav.Link>                     
                     </Nav>
                     </Navbar.Collapse>

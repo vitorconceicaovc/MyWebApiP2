@@ -48,3 +48,8 @@ section {
 table {
   text-align: center;
 }
+
+.icon {
+  font-size: 25px;
+  cursor: pointer;
+}
