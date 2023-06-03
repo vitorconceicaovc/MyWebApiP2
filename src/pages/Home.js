@@ -5,7 +5,7 @@ export function Home() {
         <div className='homeSection'>
         
         <Button  href='/EmployeesList' variant="primary">Employees</Button>
-        <Button  href='/' variant="primary">Categories</Button>
+        <Button  href='/CategoriesList' variant="primary">Categories</Button>
        
         </div>
     )

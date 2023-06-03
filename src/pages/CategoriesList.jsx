@@ -1,22 +1,21 @@
 import { useEffect, useState } from "react";
 import { Table } from 'react-bootstrap'
-import Button from 'react-bootstrap/Button';
 
 import { TiDelete } from 'react-icons/ti'
 import { FaEdit } from 'react-icons/fa'  
 import { TbListDetails } from 'react-icons/tb'
 
-import { GetEmployees } from "../api/api"
+import { GetCategories } from "../api/api"
 
-export function EmployeesList() {
+export function CategoriesList() {
 
-    const [employees, setEmployees] = useState([]);
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await GetEmployees();
-          setEmployees(response);
+          const response = await GetCategories();
+          setCategories(response);
         } catch (error) {
           // Lida com erros
         }
@@ -25,9 +24,11 @@ export function EmployeesList() {
       fetchData();
     }, []);
 
-    return(
-      <section className="listSection">
+    var index = 1
 
+    return(
+      <section >
+          
         <Table id='list-table' className='container w-75' bordered striped variant='light' >
 
           <thead>
@@ -35,16 +36,15 @@ export function EmployeesList() {
             <tr>
             
               <th colSpan={7} >
-              <h4>Employees List</h4>
+              <h4>Categories List</h4>
               </th>   
 
             </tr>
 
             <tr>
 
-              <th>ID</th>
+              <th>#</th>
               <th>Name</th>
-              <th>Category</th>
               <th>Acronym</th>
               <th>Details</th>
               <th>Edit</th>
@@ -55,12 +55,11 @@ export function EmployeesList() {
           </thead>
 
           <tbody>
-          {employees.map((employee) => (
-            <tr key={employee.Id}>
-              <td>{employee.Id}</td>
-              <td>{employee.Name}</td>
-              <td>{employee.Category1.Category1}</td>
-              <td>{employee.Category}</td>
+          {categories.map((category) => (
+            <tr key={index}>
+              <td>{index++}</td>
+              <td>{category.Category1}</td>
+              <td>{category.acronym}</td>
               <td><TbListDetails className='icon' /></td>
               <td><FaEdit  className='icon' /></td>
               <td><TiDelete className='icon' /></td>
