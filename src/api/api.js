@@ -1,15 +1,29 @@
 import axios from 'axios';
 
+const baseURL = "http://mywebapi.somee.com/api/"
+
 export const GetEmployees = async () => {
+
   try {
-    const response = await fetch("http://mywebapi.somee.com/api/Employees");
+
+    const response = await axios.get(`${baseURL}Employees`);
+
     if (!response.ok) {
-      throw new Error("Erro na solicitação. Código de resposta: " + response.status);
+      
+      console.log(`Response Error: ${response.status}`);
+      
     }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error(error);
-    throw error;
+
+    console.log(response.data)
+    
+    return response.data;
+
+  } catch (e) {
+
+    console.log(`Error: ${e}`);
+    throw e;
+
   }
+
 };
+
