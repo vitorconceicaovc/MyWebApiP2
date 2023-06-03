@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-const baseURL = "http://mywebapi.somee.com/api/"
+const baseURL = "https://mywebapi.somee.com/api/"
 
 export const GetEmployees = async () => {
 
   try {
 
-    const response = await axios.get(`${baseURL}Employees`);
+    const response = await axios.get(`${baseURL}employees`);
 
     if (!response.ok) {
       
